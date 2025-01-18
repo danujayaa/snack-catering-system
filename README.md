@@ -1,4 +1,4 @@
-# My Flutter and Laravel Project
+# Pemesanan Snack & Catering
 
 Ini adalah proyek **full-stack** yang menggabungkan **Flutter** untuk aplikasi mobile dan **Laravel** sebagai backend API. Aplikasi ini dirancang untuk mengelola pemesanan snack dan catering.
 
