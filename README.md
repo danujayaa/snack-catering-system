@@ -30,3 +30,29 @@ Proyek ini terdiri dari dua bagian utama:
 ### Flutter App
 - Flutter SDK >=3.3.4 <4.0.0
 - Android Studio atau Visual Studio Code dengan plugin Flutter dan Dart
+
+## Hasil Aplikasi Mobile Pemesanan Snack & Catering
+
+### Splash Screen
+
+![Splash Screen](ordermobile/assets/screenshoot/loading_screen.png)
+
+### Landing Page
+
+![Landing Page](ordermobile/assets/screenshoot/landing_page.png)
+
+### Login
+
+![Login](ordermobile/assets/screenshoot/login.png)
+
+### Home
+
+![Home](ordermobile/assets/screenshoot/home.png)
+
+### Pesanan
+
+![Order](ordermobile/assets/screenshoot/order.png)
+
+### Profil
+
+![Home](ordermobile/assets/screenshoot/profile.png)
