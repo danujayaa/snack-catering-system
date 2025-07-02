@@ -13,7 +13,7 @@ class AuthController extends GetxController {
   var user =
       User(id: 0, name: '', email: '', phone: '', password: '', role: '').obs;
 
-  final String baseUrl = 'https://yunna.bwa.biz.id/api';
+  final String baseUrl = 'https://yunna.soexma.com/api';
   final AuthService _authService = Get.find<AuthService>();
 
   Future<void> register(

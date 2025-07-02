@@ -15,7 +15,6 @@ class PaymentScreenAdmin extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FD),
         appBar: AppBar(
-          
           elevation: 0,
           automaticallyImplyLeading: false,
           title: Text(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -170,26 +171,28 @@ class _OrderScreenState extends State<OrderScreen> {
                                   children: [
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(12),
-                                      child: Image.network(
-                                        product?.image ?? 'DEFAULT_IMAGE_URL',
-                                        width: width * 0.2,
-                                        height: width * 0.2,
+                                      child: CachedNetworkImage(
+                                        imageUrl: (product != null &&
+                                                product.image.isNotEmpty &&
+                                                Uri.tryParse(product.image)
+                                                        ?.isAbsolute ==
+                                                    true)
+                                            ? product.image
+                                            : 'DEFAULT_IMAGE_URL',
+                                        width: 80,
+                                        height: 80,
                                         fit: BoxFit.cover,
-                                        errorBuilder:
+                                        errorWidget:
                                             (context, error, stackTrace) {
                                           return Container(
-                                            width: width * 0.2,
-                                            height: width * 0.2,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xFFE8EEFF),
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                            child: Icon(
+                                            width: 80,
+                                            height: 80,
+                                            color: const Color(0xFFE8EEFF),
+                                            child: const Icon(
                                               Icons
                                                   .image_not_supported_outlined,
-                                              color: const Color(0xff3d3d3d),
-                                              size: width * 0.1,
+                                              color: Color(0xff3d3d3d),
+                                              size: 28,
                                             ),
                                           );
                                         },

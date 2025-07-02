@@ -17,7 +17,7 @@ class FetchDataOrder extends GetxController {
   var isError = false.obs;
   var errorMessage = ''.obs;
 
-  final String baseUrl = 'https://yunna.bwa.biz.id/api';
+  final String baseUrl = 'https://yunna.soexma.com/api';
   final AuthService authService = Get.find<AuthService>();
   final FetchDataUser fetchDataUser = Get.find<FetchDataUser>();
   final FetchDataAddress fetchDataAddress = Get.put(FetchDataAddress());

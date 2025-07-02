@@ -1,5 +1,5 @@
 class Product {
-  static const baseUrl = 'http://yunna.bwa.biz.id';
+  static const baseUrl = 'http://yunna.soexma.com';
   
   final int id;
   final String name;

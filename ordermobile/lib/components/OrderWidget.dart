@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -35,21 +36,27 @@ class OrderWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  image,
-                  width: 100,
-                  height: 70,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(
-                      width: 130,
-                      height: 100,
-                      color: Colors.grey,
-                      child:
-                          const Icon(Icons.broken_image, color: Colors.white),
-                    );
-                  },
-                ),
+                child:
+                    image.isNotEmpty &&
+                            Uri.tryParse(image)?.isAbsolute == true
+                        ? CachedNetworkImage(
+                            imageUrl: image,
+                            width: 100,
+                            height: 70,
+                            fit: BoxFit.cover,
+                            errorWidget: (context, error, stackTrace) {
+                              return const Icon(
+                                Icons.image_not_supported,
+                                size: 100,
+                                color: Colors.grey,
+                              );
+                            },
+                          )
+                        : const Icon(
+                            Icons.image_not_supported,
+                            size: 100,
+                            color: Colors.grey,
+                          ),
               ),
               const SizedBox(width: 16),
               Expanded(

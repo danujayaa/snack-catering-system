@@ -10,7 +10,7 @@ class FetchDataCategory extends GetxController {
   var isError = false.obs;
   var errorMessage = ''.obs;
 
-  final String baseUrl = 'https://yunna.bwa.biz.id/api/categories';
+  final String baseUrl = 'https://yunna.soexma.com/api/categories';
   final AuthService authService = Get.find<AuthService>();
 
   @override

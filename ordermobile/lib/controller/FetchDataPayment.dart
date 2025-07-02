@@ -12,7 +12,7 @@ class FetchDataPayment extends GetxController {
   var isError = false.obs;
   var errorMessage = ''.obs;
 
-  final String baseUrl = 'https://yunna.bwa.biz.id/api';
+  final String baseUrl = 'https://yunna.soexma.com/api';
   final AuthService authService = Get.find<AuthService>();
 
   @override
@@ -44,6 +44,7 @@ class FetchDataPayment extends GetxController {
     } catch (e) {
       isError(true);
       errorMessage('Error: $e');
+      print('Exception: $e');
     } finally {
       isLoading(false);
     }

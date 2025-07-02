@@ -46,6 +46,11 @@ class Payment {
       'transaction_date': transactionDate.toIso8601String(),
     };
   }
+
+  @override
+  String toString() {
+    return 'Payment(id: $id, orderId: $orderId, transactionId: $transactionId, amount: $amount, paymentMethod: $paymentMethod, paymentCode: $paymentCode, paymentStatus: $paymentStatus, transactionDate: $transactionDate)';
+  }
 }
 
 class FinanceData {

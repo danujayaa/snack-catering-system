@@ -13,7 +13,7 @@ class FetchDataProduct extends GetxController {
   var isError = false.obs;
   var errorMessage = ''.obs;
 
-  final String baseUrl = 'https://yunna.bwa.biz.id';
+  final String baseUrl = 'https://yunna.soexma.com';
   final AuthService authService = Get.find<AuthService>();
 
   @override

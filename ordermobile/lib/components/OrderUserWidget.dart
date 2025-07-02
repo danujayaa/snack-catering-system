@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -45,12 +46,15 @@ class OrderCard extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      product?.image ?? 'DEFAULT_IMAGE_URL',
+                    child: CachedNetworkImage(
+                      imageUrl: (product?.image.isNotEmpty == true &&
+                              Uri.tryParse(product?.image)?.isAbsolute == true)
+                          ? product?.image ?? 'DEFAULT_IMAGE_URL'
+                          : 'DEFAULT_IMAGE_URL',
                       width: 80,
                       height: 80,
                       fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
+                      errorWidget: (context, error, stackTrace) {
                         return Container(
                           width: 80,
                           height: 80,

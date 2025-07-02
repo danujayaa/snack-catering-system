@@ -113,7 +113,7 @@ class PaymentController extends Controller
 
     public function getTotalPendapatan()
     {
-        $total = DB::table('payments')->sum('total');
+        $total = DB::table('payments')->sum('amount');
         return response()->json(['total' => $total]);
     }
 }
